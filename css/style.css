@@ -154,6 +154,57 @@ footer {
     text-align: center;
 }
 
+/* ABOUT */
+.photo-slider {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-image {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider-image.active {
+    opacity: 1;
+}
+
+.about-intro,
+.mission-statement,
+.team {
+    padding: 2rem;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 1.25rem;
+}
+
 /* Mobile view (smaller than 600px) */
 @media screen and (max-width: 600px) {
     .nav ul {
