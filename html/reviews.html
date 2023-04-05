@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Mailloux Farms</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="products.html">Products & Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eggs.html">Eggs</a></li>
+                        <li><a href="straw.html">Straw</a></li>
+                        <li><a href="stumping.html">Stumping</a></li>
+                        <li><a href="baling.html">Baling</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="reviews-container">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <h3>Jane Doe</h3>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <p>Great products and service! I highly recommend Mailloux Farms.</p>
+            </div>
+            <div class="review">
+                <h3>John Doe</h3>
+                <div class="rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                </div>
+                <p>Great products and service! I highly recommend Mailloux Farms.</p>
+            </div>
+
+            <a href="#write-review" class="write-review-btn">Write a Review!</a>
+        </section>
+
+        <section class="review-form" id="write-review">
+            <h2>Write a Review</h2>
+            <form action="https://formspree.io/f/mnqygkaq" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="">Select a rating</option>
+                        <option value="1">★☆☆☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="5">★★★★★</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+        </section>
+    <footer>
+        <p style="text-align: left">Login</p>
+        <p>&copy; 2023 Mailloux Farms. All rights reserved.</p>
+    </footer>
+</body>
+</html>

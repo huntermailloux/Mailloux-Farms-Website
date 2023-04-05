@@ -205,6 +205,206 @@ footer {
     font-size: 1.25rem;
 }
 
+/********** PRODUCTS AND SERVICES ***********/
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-details {
+    flex: 1;
+    margin-left: 2rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.description {
+    margin-bottom: 1rem;
+}
+
+.quantity {
+    margin-bottom: 1rem;
+}
+
+.add-to-cart {
+    background-color: #2A2727;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #555;
+}
+
+/************ CONTACT US ************/
+.contact {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact select {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact input[type="submit"] {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #2A2727;
+    color: #fff;
+}
+
+.contact input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/************** REVIEWS ***************/
+.reviews-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review h3 {
+    margin-bottom: 0.5rem;
+}
+
+.review p {
+    margin-bottom: 0.5rem;
+}
+
+.review .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review .rating .star {
+    color: #FFD700;
+    margin: 0 0.1rem;
+}
+
+.write-review-btn {
+    display: inline-block;
+    background-color: #2A2727;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin: 1rem auto;
+}
+
+.write-review-btn:hover {
+    background-color: #555;
+}
+
+.review-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-form h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #2A2727;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+
+
+
 /* Mobile view (smaller than 600px) */
 @media screen and (max-width: 600px) {
     .nav ul {

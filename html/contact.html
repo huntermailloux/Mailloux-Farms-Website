@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Mailloux Farms</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="products.html">Products & Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eggs.html">Eggs</a></li>
+                        <li><a href="straw.html">Straw</a></li>
+                        <li><a href="stumping.html">Stumping</a></li>
+                        <li><a href="baling.html">Baling</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact">
+            <h1>Contact Us</h1>
+            <form action="https://formspree.io/f/xwkjrjge" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="_replyto" required>
+
+                <label for="inquiry">Inquiry:</label>
+                <select id="inquiry" name="inquiry" required>
+                    <option value="">Select an inquiry type</option>
+                    <option value="product_info">Product Information</option>
+                    <option value="order_status">Order Status</option>
+                    <option value="general_question">General Question</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <input type="hidden" name="_to" value="maillo51@uwindsor.ca">
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p style="text-align: left">Login</p>
+        <p>&copy; 2023 Mailloux Farms. All rights reserved.</p>
+    </footer>
+</body>
+</html>
