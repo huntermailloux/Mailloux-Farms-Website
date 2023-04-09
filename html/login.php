@@ -1,3 +1,9 @@
+<?php 
+    require 'ConnectionString.php';
+?>
+<!-- LOGIN TO ADMIN IS:
+    Username: JMailloux
+    Password: 12345 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,36 +39,26 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="contact">
-            <h1>Contact Us</h1>
-            <form action="https://formspree.io/f/xwkjrjge" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="_replyto" required>
-
-                <label for="inquiry">Inquiry:</label>
-                <select id="inquiry" name="inquiry" required>
-                    <option value="">Select an inquiry type</option>
-                    <option value="product_info">Product Information</option>
-                    <option value="order_status">Order Status</option>
-                    <option value="general_question">General Question</option>
-                </select>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <input type="hidden" name="_to" value="maillo51@uwindsor.ca">
-
-                <input type="submit" value="Submit">
-            </form>
-        </section>
-    </main>
+    <div class="login-container">
+        <form class="login-form" action="login_process.php" method="post">
+            <h2>Login</h2>
+            <?php if (isset($_GET['error'])): ?>
+                <div class="error">Invalid username or password.</div>
+            <?php endif; ?>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+    </div>
     <footer>
-        <p style="text-align: left"><a href="login.php">login</a></p>
+        <p style="text-align: left"><a href="Test.php">login</a></p>
         <p>&copy; 2023 Mailloux Farms. All rights reserved.</p>
-    </footer>
+    </footer>  
 </body>
 </html>

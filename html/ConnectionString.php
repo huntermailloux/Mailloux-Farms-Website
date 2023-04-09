@@ -1,7 +1,7 @@
 <?php
 
 $db_host = 'localhost'; 
-$db_username = 'maillo51_maillouxFarms'; 
+$db_username = 'maillo51_db'; 
 $db_password = 'Mailloux123'; 
 $db_name = 'maillo51_db'; 
 
