@@ -125,6 +125,11 @@ nav a:hover {
     margin-bottom: 1rem;
     text-align: center;
 }
+.overview h6 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
 
 .overview-grid {
     display: grid;
@@ -178,7 +183,6 @@ footer {
 }
 
 .about-intro,
-.mission-statement,
 .team {
     padding: 2rem;
     text-align: center;
@@ -216,7 +220,7 @@ footer {
 }
 
 .product-image img {
-    max-width: 100%;
+    max-width: 400px;
     height: auto;
 }
 
