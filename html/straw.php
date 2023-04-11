@@ -1,3 +1,7 @@
+<?php 
+    require 'ConnectionScript.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +13,9 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
+            <a href="index.php" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
             <ul class="nav">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li class="dropdown">
                     <a href="about.html">About Us</a>
                     <ul class="dropdown-menu">

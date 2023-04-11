@@ -15,9 +15,9 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
+            <a href="index.php" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
             <ul class="nav">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li class="dropdown">
                     <a href="about.html">About Us</a>
                     <ul class="dropdown-menu">
@@ -39,25 +39,56 @@
             </ul>
         </nav>
     </header>
-    <div class="login-container">
-        <form class="login-form" action="login_process.php" method="post">
-            <h2>Login</h2>
-            <?php if (isset($_GET['error'])): ?>
-                <div class="error">Invalid username or password.</div>
-            <?php endif; ?>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <button type="submit" class="submit-btn">Login</button>
-        </form>
+    <div class="container">
+        <div class="login-container">
+            <form class="login-form" action="login_process.php" method="post">
+                <h2>Login</h2>
+                <?php if (isset($_GET['error'])): ?>
+                    <div class="error">Invalid username or password.</div>
+                <?php endif; ?>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <button onclick="window.location='#create-account-form'" class="register-btn">Create Account</button>
+        </div>
+        <div class="create-account-container" id="create-account-form">
+            <form class="create-account-form" action="create_account.php" method="post">
+                <h2>Create Account</h2>
+                <?php if (isset($_GET['error']) && $_GET['error'] == 'username_already_exists'): ?>
+                    <div class="error">The username already exists. Please choose a different username.</div>
+                <?php endif; ?>
+                <div class="form-group">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" name="FirstName" id="FirstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="LastName">Last Name</label>
+                    <input type="text" name="LastName" id="LastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" name="confirm_password" id="confirm_password"required>
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+        </div>
     </div>
     <footer>
-        <p style="text-align: left"><a href="Test.php">login</a></p>
         <p>&copy; 2023 Mailloux Farms. All rights reserved.</p>
     </footer>  
 </body>
