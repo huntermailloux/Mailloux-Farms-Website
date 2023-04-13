@@ -1,3 +1,6 @@
+<?php 
+    require 'ConnectionString.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,26 +13,18 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
+            <a href="index.php" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
             <ul class="nav">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li class="dropdown">
-                    <a href="about.html">About Us</a>
+                    <a href="about.php">About Us</a>
                     <ul class="dropdown-menu">
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
+                        <li><a href="reviews.php">Reviews</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="products.html">Products & Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="eggs.html">Eggs</a></li>
-                        <li><a href="straw.html">Straw</a></li>
-                        <li><a href="stumping.html">Stumping</a></li>
-                        <li><a href="baling.html">Baling</a></li>
-                        <li><a onclick="signin()">Cart</a></li>
-                        <li><a onclick="signin()">Checkout</a></li>
-                    </ul>
+                    <a href="products.php">Products & Services</a>
                 </li>
             </ul>
         </nav>
@@ -82,7 +77,8 @@
         </section>
     </main>
     <footer>
-        <p style="text-align: left"><a href="login.php">Login</a></p>
+        <p style="text-align: left">Logged in as: <?php echo $_SESSION['username']; ?> </p>
+        <p style="text-align: left"><a onclick="logout()" href="index.html" action="logout.php">Logout</a></p>
         <p>&copy; 2023 Mailloux Farms. All rights reserved.</p>
     </footer>
 </body>

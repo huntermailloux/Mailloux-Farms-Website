@@ -159,6 +159,11 @@ footer {
     text-align: center;
 }
 
+footer a {
+    text-align: left;
+    color: #fff;
+}
+
 /* ABOUT */
 .photo-slider {
     height: 100vh;
@@ -210,6 +215,51 @@ footer {
 }
 
 /********** PRODUCTS AND SERVICES ***********/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  
+  .grid-item {
+    background: #f8f8f8;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  .grid-item button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .grid-item button:hover {
+    background-color: #45a049;
+  }
+  
+
 .product {
     display: flex;
     flex-wrap: wrap;

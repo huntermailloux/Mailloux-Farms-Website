@@ -1,3 +1,7 @@
+<?php 
+    require 'ConnectionString.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mailloux Farms</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scripts.js"></script>
 </head>
 <body>
     <header>
@@ -13,22 +18,14 @@
             <ul class="nav">
                 <li><a href="index.php">Home</a></li>
                 <li class="dropdown">
-                    <a href="about.html">About Us</a>
+                    <a href="about.php">About Us</a>
                     <ul class="dropdown-menu">
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
+                        <li><a href="reviews.php">Reviews</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="products.html">Products & Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="eggs.html">Eggs</a></li>
-                        <li><a href="straw.html">Straw</a></li>
-                        <li><a href="stumping.html">Stumping</a></li>
-                        <li><a href="baling.html">Baling</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                    </ul>
+                    <a href="products.php">Products & Services</a>
                 </li>
             </ul>
         </nav>
@@ -36,31 +33,30 @@
     <main>
         <section class="hero">
             <div class="hero-text">
-                <h1>Welcome to Mailloux Farms</h1>
-                <p>Our grain is your gain!</p>
-                <a href="products.html" class="cta">Explore Our Products & Services</a>
+                <h1>Welcome back, <?php echo $_SESSION['FirstName'] . ' ' . $_SESSION['LastName']; ?>!</h1>
+                <a href="products.php" class="cta">Explore Our Products & Services</a>
             </div>
         </section>
         <section class="overview">
             <h2>What We Offer</h2>
             <div class="overview-grid">
                 <div class="overview-item">
-                    <a href="eggs.html"><img src="../images/egg.jpg" alt="Product 1"></a>                    
+                    <a href="products.php"><img src="../images/egg.jpg" alt="Product 1"></a>                    
                     <h3>Eggs</h3>
                     <p>Farm fresh eggs layed by our chickens on the farm.</p>
                 </div>
                 <div class="overview-item">
-                    <a href="straw.html"><img src="../images/straw.jpg" alt="Product 2"></a>
+                    <a href="products.php"><img src="../images/straw.jpg" alt="Product 2"></a>
                     <h3>Straw Bales</h3>
                     <p>Straw bales from local farms around Windsor-Essex.</p>
                 </div>
                 <div class="overview-item">
-                    <a href="stumping.html"><img src="../images/stumping.jpg" alt="Service 1"></a>
+                    <a href="products.php"><img src="../images/stumping.jpg" alt="Service 1"></a>
                     <h3>Stumping Service</h3>
                     <p>We get rid of any sized tree stump.</p>
                 </div>
                 <div class="overview-item">
-                    <a href="baling.html"><img src="../images/baling.jpg" alt="Service 2"></a>
+                    <a href="products.php"><img src="../images/baling.jpg" alt="Service 2"></a>
                     <h3>Baling Service</h3>
                     <p>We bale any wheat remains left in the field.</p>
                 </div>
@@ -68,10 +64,8 @@
         </section>
     </main>
     <footer>
-        <p style="text-align: left"><a href="login.php">Login</a></p>
-        <?php if (isset($_SESSION['username'])): ?>
-            <p>Logged in as: <?php echo $_SESSION['username']; ?></p>
-        <?php endif; ?>
+        <p style="text-align: left">Logged in as: <?php echo $_SESSION['username']; ?> </p>
+        <p style="text-align: left"><a onclick="logout()" href="index.html" action="logout.php">Logout</a></p>
         <p>&copy; 2023 Mailloux Farms. All rights reserved.</p>
     </footer>
 </body>

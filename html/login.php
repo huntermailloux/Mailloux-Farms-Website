@@ -11,13 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mailloux Farms</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scripts.js"></script>
 </head>
 <body>
-    <header>
+<header>
         <nav>
-            <a href="index.php" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
             <ul class="nav">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a href="about.html">About Us</a>
                     <ul class="dropdown-menu">
@@ -32,8 +33,8 @@
                         <li><a href="straw.html">Straw</a></li>
                         <li><a href="stumping.html">Stumping</a></li>
                         <li><a href="baling.html">Baling</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a onclick="signin()">Cart</a></li>
+                        <li><a onclick="signin()">Checkout</a></li>
                     </ul>
                 </li>
             </ul>

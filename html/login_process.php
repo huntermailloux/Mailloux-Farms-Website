@@ -10,9 +10,15 @@ $stmt->bind_param("ss", $username, $password);
 $stmt->execute();
 $result = $stmt->get_result();
 
+
 if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $_SESSION['FirstName'] = $row['FirstName'];
+    $_SESSION['LastName'] = $row['LastName'];
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
+    $_SESSION['UserId'] = $row['UserId'];
+    $username = $_SESSION['username'];
     if ($username === 'JMailloux') {
         header('Location: admin.php');
         exit;

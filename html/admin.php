@@ -23,7 +23,7 @@
         </section>
     </main>
     <footer>
-        <p style="text-align: left"><a href="index.php">Logout</a></p>
+        <p style="text-align: left"><a href="index.html">Logout</a></p>
         <p>&copy; 2023 Mailloux Farms. All rights reserved.</p>
     </footer>
 </body>
