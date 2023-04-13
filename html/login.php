@@ -85,7 +85,7 @@
                     <label for="confirm_password">Confirm Password</label>
                     <input type="password" name="confirm_password" id="confirm_password"required>
                 </div>
-                <button type="submit" class="submit-btn">Create Account</button>
+                <button type="submit" class="submit-btn" onclick="accountcreated()">Create Account</button>
             </form>
         </div>
     </div>

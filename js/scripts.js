@@ -14,6 +14,10 @@ function login() {
     alert('You have been successfully loggin in!');
 }
 
+function accountcreated() {
+    alert('Thank you for making an account! If it worked, you should have no errors pop up at the bottom of the page');
+}
+
 function addToCart(itemId, userId, price) {
     
     // Set up an AJAX request
