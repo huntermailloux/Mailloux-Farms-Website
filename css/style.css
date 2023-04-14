@@ -7,6 +7,9 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -62,7 +65,7 @@ nav a:hover {
     background-color: #333;
     padding: 1rem;
     list-style: none;
-    min-width: 200px;
+    min-width: 150px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
@@ -157,6 +160,7 @@ footer {
     color: #fff;
     padding: 1rem;
     text-align: center;
+    margin-top: auto;
 }
 
 footer a {
@@ -464,6 +468,7 @@ footer a {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    min-width: 800px;
     background-color: #f5f5f5;
 }
 
@@ -644,6 +649,7 @@ footer a {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
+    min-width: 750px;
 }
 
 .cart-table th,

@@ -1,26 +1,19 @@
 <?php
 require 'ConnectionString.php';
 
-if (isset($_POST['updateStraw'])) {
-    $strawStock = intval($_POST['strawStock']);
+$query = "SELECT * FROM ItemInfoDB";
+$result = $conn->query($query);
 
-    $queryStraw = "UPDATE ItemInfoDB SET Item_Qty_Avail = ? WHERE Item_ID = 2";
-    $stmtStraw = $conn->prepare($queryStraw);
-    $stmtStraw->bind_param("i", $strawStock);
-    $stmtStraw->execute();
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['itemId']) && isset($_POST['itemStock'])) {
+    $itemId = intval($_POST['itemId']);
+    $itemStock = intval($_POST['itemStock']);
 
-    $messageStraw = "Stock updated successfully for Straw!";
-}
+    $queryUpdate = "UPDATE ItemInfoDB SET Item_Qty_Avail = ? WHERE Item_ID = ?";
+    $stmtUpdate = $conn->prepare($queryUpdate);
+    $stmtUpdate->bind_param("ii", $itemStock, $itemId);
+    $stmtUpdate->execute();
 
-if (isset($_POST['updateEgg'])) {
-    $eggStock = intval($_POST['eggStock']);
-
-    $queryEgg = "UPDATE ItemInfoDB SET Item_Qty_Avail = ? WHERE Item_ID = 1";
-    $stmtEgg = $conn->prepare($queryEgg);
-    $stmtEgg->bind_param("i", $eggStock);
-    $stmtEgg->execute();
-
-    $messageEgg = "Stock updated successfully for Egg!";
+    $message = "Stock updated successfully!";
 }
 ?>
 <!DOCTYPE html>
@@ -42,23 +35,18 @@ if (isset($_POST['updateEgg'])) {
     </header>
     <div class="container">
         <h2>Update Stock</h2>
-        <?php if (isset($messageStraw)): ?>
-            <p><?php echo $messageStraw; ?></p>
+        <?php if (isset($message)): ?>
+            <p><?php echo $message; ?></p>
         <?php endif; ?>
-        <form action="admin.php" method="post">
-            <label for="strawStock">Change stock for Straw:</label>
-            <input type="number" id="strawStock" name="strawStock" required>
-            <input type="submit" name="updateStraw" value="Update Straw Stock">
-        </form>
-        <br>
-        <?php if (isset($messageEgg)): ?>
-            <p><?php echo $messageEgg; ?></p>
-        <?php endif; ?>
-        <form action="admin.php" method="post">
-            <label for="eggStock">Change stock for Egg:</label>
-            <input type="number" id="eggStock" name="eggStock" required>
-            <input type="submit" name="updateEgg" value="Update Egg Stock">
-        </form>
+        <?php while ($row = $result->fetch_assoc()): ?>
+            <form action="admin.php" method="post">
+                <label for="itemStock-<?php echo $row['Item_ID']; ?>">Change stock for <?php echo $row['Item_Name']; ?>:</label>
+                <input type="number" id="itemStock-<?php echo $row['Item_ID']; ?>" name="itemStock" required>
+                <input type="hidden" name="itemId" value="<?php echo $row['Item_ID']; ?>">
+                <input type="submit" value="Update <?php echo $row['Item_Name']; ?> Stock">
+            </form>
+            <br>
+        <?php endwhile; ?>
         <h2>Add New Item</h2>
         <form action="add_item.php" method="post">
             <label for="item_name">Item Name:</label>
@@ -75,9 +63,38 @@ if (isset($_POST['updateEgg'])) {
 
             <input type="submit" value="Add Item">
         </form>
+        <?php 
+            $queryItems = "SELECT * FROM ItemInfoDB";
+            $resultItems = $conn->query($queryItems);
+        ?>
+        <h2>Delete Item(s)</h2>
+        <?php if (isset($_GET['message'])): ?>
+            <p><?php echo urldecode($_GET['message']); ?></p>
+        <?php endif; ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php while ($row = $resultItems->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo $row['Item_Name']; ?></td>
+                    <td>
+                        <form action="delete_item.php" method="post">
+                            <input type="hidden" name="itemId" value="<?php echo $row['Item_ID']; ?>">
+                            <input type="submit" name="deleteItem" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+            </tbody>
+        </table>
     </div>
     <footer>
-        <p style="text-align: left"><a href="index.html">Logout</a></p>
+        <p style="text-align: left"><a onclick="logout()" href="index.html">Logout</a></p>
         <p>&copy; 2023 Mailloux Farms. All rights reserved.</p>
     </footer>
 </body>

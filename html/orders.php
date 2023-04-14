@@ -2,7 +2,10 @@
 require 'ConnectionString.php';
 
 $userId = $_SESSION['UserId'];
-$query = "SELECT * FROM Orders WHERE UserId = ?";
+$query = "SELECT Orders.OrderID, Orders.Item_ID, Orders.Quantity, ItemInfoDB.Item_Name
+          FROM Orders
+          INNER JOIN ItemInfoDB ON Orders.Item_ID = ItemInfoDB.Item_ID
+          WHERE Orders.UserId = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $userId);
 $stmt->execute();
@@ -54,20 +57,7 @@ $result = $stmt->get_result();
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td><?php echo $row['OrderID']; ?></td>
-                        <td>
-                            <?php
-                            switch ($row['Item_ID']) {
-                                case 1:
-                                    echo "Egg";
-                                    break;
-                                case 2:
-                                    echo "Straw";
-                                    break;
-                                default:
-                                    echo "Unknown";
-                            }
-                            ?>
-                        </td>
+                        <td><?php echo $row['Item_Name']; ?></td>
                         <td><?php echo $row['Quantity']; ?></td>
                     </tr>
                 <?php endwhile; ?>
