@@ -39,17 +39,19 @@
         var userId = <?php echo $_SESSION['UserId']; ?>;
     </script>
     <div class="container">
-        <div class="grid">
+    <div class="grid">
             <?php while ($row = $result->fetch_assoc()): ?>
                 <div class="grid-item">
                     <img src="../images/<?php echo $row['imageName']; ?>" alt="<?php echo $row['Item_Name']; ?>">
                     <h3><?php echo $row['Item_Name']; ?></h3>
                     <p>Price: $<?php echo $row['Item_Price']; ?></p>
                     <p>Quantity available: <?php echo $row['Item_Qty_Avail']; ?></p>
-                    <button onclick="addToCart(<?php echo $row['Item_ID']; ?>, <?php echo $row['Item_Price']; ?>, userId, '<?php echo $row['Item_Name']; ?>')">Add to Cart</button>
+                    <input type="number" id="quantity-<?php echo $row['Item_ID']; ?>" name="quantity" min="1" max="<?php echo $row['Item_Qty_Avail']; ?>" value="1">
+                    <button data-stock="<?php echo $row['Item_Qty_Avail']; ?>" onclick="addToCart(<?php echo $row['Item_ID']; ?>, <?php echo $row['Item_Price']; ?>, userId, '<?php echo $row['Item_Name']; ?>', parseInt(document.getElementById('quantity-<?php echo $row['Item_ID']; ?>').value), this)">Add to Cart</button>
                 </div>
             <?php endwhile; ?>
         </div>
+    </div>
     </div>
     <footer>
         <p style="text-align: left">Logged in as: <?php echo $_SESSION['username']; ?> </p>

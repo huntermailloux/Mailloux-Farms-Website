@@ -5,7 +5,7 @@ $userId = $_SESSION['UserId'];
 $cartItems = isset($_SESSION['cart'][$userId]) ? $_SESSION['cart'][$userId] : array();
 $total = 0;
 ?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
