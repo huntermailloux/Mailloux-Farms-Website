@@ -59,6 +59,22 @@ if (isset($_POST['updateEgg'])) {
             <input type="number" id="eggStock" name="eggStock" required>
             <input type="submit" name="updateEgg" value="Update Egg Stock">
         </form>
+        <h2>Add New Item</h2>
+        <form action="add_item.php" method="post">
+            <label for="item_name">Item Name:</label>
+            <input type="text" name="item_name" id="item_name" required>
+
+            <label for="item_price">Item Price:</label>
+            <input type="number" step="0.01" name="item_price" id="item_price" required>
+
+            <label for="item_qty_avail">Quantity Available:</label>
+            <input type="number" name="item_qty_avail" id="item_qty_avail" required>
+
+            <label for="image_name">Image File Name:</label>
+            <input type="text" name="image_name" id="image_name" required>
+
+            <input type="submit" value="Add Item">
+        </form>
     </div>
     <footer>
         <p style="text-align: left"><a href="index.html">Logout</a></p>
