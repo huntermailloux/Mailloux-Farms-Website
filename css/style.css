@@ -639,6 +639,54 @@ footer a {
     background-color: #d4ac0d;
 }
 
+/***************** CART ******************/
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.cart-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #3a7bd5;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-buttons button:hover {
+    background-color: #2666a1;
+}
+
+
 /* Mobile view (smaller than 600px) */
 @media screen and (max-width: 600px) {
     .nav ul {

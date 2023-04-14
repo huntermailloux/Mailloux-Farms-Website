@@ -11,7 +11,7 @@
     <script src="../js/scripts.js"></script>
 </head>
 <body>
-    <header>
+<header>
         <nav>
             <a href="index.php" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
             <ul class="nav">
@@ -25,6 +25,10 @@
                 </li>
                 <li class="dropdown">
                     <a href="products.php">Products & Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cart.php">Cart</a></li>
+                        <li><a href="orders.php">Orders</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>

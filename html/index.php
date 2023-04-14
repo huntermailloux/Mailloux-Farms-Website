@@ -26,6 +26,10 @@
                 </li>
                 <li class="dropdown">
                     <a href="products.php">Products & Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cart.php">Cart</a></li>
+                        <li><a href="orders.php">Orders</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>

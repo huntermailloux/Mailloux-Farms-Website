@@ -1,7 +1,4 @@
 <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
     require 'ConnectionString.php';
     $query = "SELECT * FROM ItemInfoDB";
     $result = $conn->query($query);
@@ -16,7 +13,7 @@
     <script src="../js/scripts.js"></script>
 </head>
 <body>
-    <header>
+<header>
         <nav>
             <a href="index.php" class="logo"><img src="../images/logo.png" alt="Mailloux Farms Logo" width="100px"></a>
             <ul class="nav">
@@ -30,6 +27,10 @@
                 </li>
                 <li class="dropdown">
                     <a href="products.php">Products & Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cart.php">Cart</a></li>
+                        <li><a href="orders.php">Orders</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -45,7 +46,7 @@
                     <h3><?php echo $row['Item_Name']; ?></h3>
                     <p>Price: $<?php echo $row['Item_Price']; ?></p>
                     <p>Quantity available: <?php echo $row['Item_Qty_Avail']; ?></p>
-                    <button onclick="addToCart(<?php echo $row['Item_ID']; ?>, userId, <?php echo $row['Item_Price']; ?>)">Add to Cart</button>
+                    <button onclick="addToCart(<?php echo $row['Item_ID']; ?>, <?php echo $row['Item_Price']; ?>, userId, '<?php echo $row['Item_Name']; ?>')">Add to Cart</button>
                 </div>
             <?php endwhile; ?>
         </div>
